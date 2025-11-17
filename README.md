@@ -55,7 +55,7 @@ cd buildroot
 ```sh
   ssh root@10.247.xx.xx
 ```
-##Output Terminal 
+### Output Terminal 
 ```sh
 root@10.247.xx.xx's password:
 
