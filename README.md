@@ -31,7 +31,6 @@ sudo apt install which sed make binutils build-essential \ diffutils gcc g++ bas
 ### Download Buildroot
 ```sh
 git clone https://github.com/buildroot/buildroot.git
-cd buildroot
 ```
 ### Select the Board
 ```sh
