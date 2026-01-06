@@ -269,5 +269,5 @@ ssh root@10.xxx.xx.xx
 ```
 ### Output
 ```sh
-Hell0..
+Hello..
 ```
