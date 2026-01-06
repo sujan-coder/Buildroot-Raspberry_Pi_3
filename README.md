@@ -200,34 +200,53 @@ We use an external ARM toolchain located on the Desktop for cross-compilation.
 
 (https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
-### Check the host machine Configuration
+### Check the host machine Configuration:
+Download the toolchain refering to your host system configuration
 ```sh
 ~/Desktop$ gcc -dumpmachine
 x86_64-linux-gnu
 ```
 ### Extract the Toolchain
 ```sh
-tar -xvf gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.xz 
+$ tar -xvf gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.xz 
 ```
-###Verify the Binary Path
+### Verify the Binary Path
 Navigate to the bin directory to confirm the path
 ```sh
-cd gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/
-pwd
+$ cd gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/
+$ pwd
 ```
 ### Configure the Environment Variable
 The toolchain of your path will be temporarily added for current session
 ```sh
-export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH
+$ export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH
 ```
 Make it Permanent
 ```sh
-echo 'export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
+$ echo 'export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH' >> ~/.bashrc
+$ source ~/.bashrc
 ```
-### Varify the installation:
+### Verify the installation:
 Confirm thw compiler version & compiler is accessible
 ```sh
-arm-none-linux-gnueabihf-g++ --version
+~/Desktop$ arm-none-linux-gnueabihf-g++ --version
+arm-none-linux-gnueabihf-g++ (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ```
+### Create the test file:
+Example to Print hello on the Build machine
+```sh
+~/Desktop$ nano tect.cpp
+
+#include <iostream>
+
+int main()
+{
+        std::cout<< "Hello.."<<std::endl;
+        return 0;
+        
+}
+
 
