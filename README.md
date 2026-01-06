@@ -227,7 +227,7 @@ $ echo 'export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-li
 $ source ~/.bashrc
 ```
 ### Verify the installation:
-Confirm thw compiler version & compiler is accessible
+Confirm the compiler version & compiler is accessible
 ```sh
 ~/Desktop$ arm-none-linux-gnueabihf-g++ --version
 arm-none-linux-gnueabihf-g++ (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621
@@ -238,7 +238,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ### Create the test file:
 Example to Print hello on the Build machine
 ```sh
-~/Desktop$ nano tect.cpp
+~/Desktop$ nano test.cpp
 
 #include <iostream>
 
@@ -248,5 +248,23 @@ int main()
         return 0;
         
 }
-
+```
+### Compile the sketch:
+Use the -static flag to ensure the binary runs on the target without library conflicts.
+```sh
+~/Desktop$ arm-none-linux-gnueabihf-g++ -o test test.cpp -static
+```
+### Deployment via SCP
+Deploy the compiled binary to the running Buildroot system:
+```sh
+~/Desktop$ scp ./test root@10.xxx.74.xx:/tmp
+```
+### Log in the board
+Once you are logged into the board's terminal, navigate to the /tmp folder, make the file executable, and run it:
+```sh
+ssh root@10.xxx.xx.xx
+# cd /tmp
+# chmod +x test
+# ./test
+```
 
