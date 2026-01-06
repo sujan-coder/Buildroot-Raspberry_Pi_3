@@ -42,6 +42,7 @@ git clone https://github.com/buildroot/buildroot.git
   make linux-menuconfig
   make busybox-menuconfig
 ```
+### Enable the Root Password 
 ### Build the system
 ```sh
   make
@@ -193,6 +194,9 @@ dhcpcd.conf    group          init.d         mtab           os-release     profi
 dropbear       hostname       inittab        network        passwd         protocols      shadow         ssl
 ```
 
-
+## Cross Compilation for GCC support
+### Toolchain Setup
+We use an external ARM toolchain located on the Desktop for cross-compilation.
+(https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
 
