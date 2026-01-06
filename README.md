@@ -226,7 +226,7 @@ Make it Permanent
 $ echo 'export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH' >> ~/.bashrc
 $ source ~/.bashrc
 ```
-### Verify the installation:
+### Verify the installation
 Confirm the compiler version & compiler is accessible
 ```sh
 ~/Desktop$ arm-none-linux-gnueabihf-g++ --version
@@ -235,7 +235,7 @@ Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ```
-### Create the test file:
+### Create the test file
 Example to Print hello on the Build machine
 ```sh
 ~/Desktop$ nano test.cpp
@@ -249,7 +249,7 @@ int main()
         
 }
 ```
-### Compile the sketch:
+### Compile the sketch
 Use the -static flag to ensure the binary runs on the target without library conflicts.
 ```sh
 ~/Desktop$ arm-none-linux-gnueabihf-g++ -o test test.cpp -static
