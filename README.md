@@ -267,4 +267,7 @@ ssh root@10.xxx.xx.xx
 # chmod +x test
 # ./test
 ```
-
+### Output
+```sh
+Hell0..
+```
