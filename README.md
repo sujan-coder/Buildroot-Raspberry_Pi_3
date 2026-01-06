@@ -25,39 +25,39 @@ The system includes:
 
 ### Install Prerequisites
 ```sh
-sudo apt update
-sudo apt install which sed make binutils build-essential \ diffutils gcc g++ bash patch gzip bzip2 perl tar cpio \ unzip rsync file bc findutils wget python3 libncurses5-dev \ libncursesw5-dev git
+$ sudo apt update
+$ sudo apt install which sed make binutils build-essential \ diffutils gcc g++ bash patch gzip bzip2 perl tar cpio \ unzip rsync file bc findutils wget python3 libncurses5-dev \ libncursesw5-dev git
 ```
 ### Download Buildroot
 ```sh
-git clone https://github.com/buildroot/buildroot.git
+$ git clone https://github.com/buildroot/buildroot.git
 ```
 ### Select the Board
 ```sh
-  make raspberrypi3_defconfig
+$ make raspberrypi3_defconfig
 ```
 ### Customize the Build
 ```sh
-  make menuconfig
-  make linux-menuconfig
-  make busybox-menuconfig
+$ make menuconfig
+$ make linux-menuconfig
+$ make busybox-menuconfig
 ```
 ### Enable the Root Password 
 ### Build the system
 ```sh
-  make
+$ make
 ```
 ### Flash the image to SD Card using
 ```sh
-  sudo dd if=output/images/sdcard.img of=/dev/sdX bc=4M
+$ sudo dd if=output/images/sdcard.img of=/dev/sdX bc=4M
 ``` 
 ### Booted on Raspberry Pi 3 and accessed via SSH
 ```sh
-  ssh root@10.247.xx.xx
+$ ssh root@10.247.xx.xx
 ```
 ### Output Terminal 
 ```sh
-root@10.247.xx.xx's password:
+$ root@10.247.xx.xx's password:
 
 # uname -a
 Linux buildroot 6.12.41-v7 #1 SMP Fri Oct 10 20:03:22 IST 2025 armv7l GNU/Linux
