@@ -1,4 +1,4 @@
-# Buildroot-Custom-Linux-for-Raspberry-Pi-3
+# Buildroot-Linux-with-gcc_cross_compilation-for-Raspberry-Pi-3
 This repository documents my process of building a minimal Linux image for Raspberry Pi 3 using **Buildroot**.  
 The goal is to understand Linux system components like BusyBox, rootfs, and bootloaders through hands-on experimentation.
 
