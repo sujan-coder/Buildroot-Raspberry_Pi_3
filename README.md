@@ -197,6 +197,37 @@ dropbear       hostname       inittab        network        passwd         proto
 ## Cross Compilation for GCC support
 ### Toolchain Setup
 We use an external ARM toolchain located on the Desktop for cross-compilation.
+
 (https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
+### Check the host machine Configuration
+```sh
+~/Desktop$ gcc -dumpmachine
+x86_64-linux-gnu
+```
+### Extract the Toolchain
+```sh
+tar -xvf gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.xz 
+```
+###Verify the Binary Path
+Navigate to the bin directory to confirm the path
+```sh
+cd gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/
+pwd
+```
+### Configure the Environment Variable
+The toolchain of your path will be temporarily added for current session
+```sh
+export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH
+```
+Make it Permanent
+```sh
+echo 'export PATH=/home/user/Downloads/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+### Varify the installation:
+Confirm thw compiler version & compiler is accessible
+```sh
+arm-none-linux-gnueabihf-g++ --version
+```
 
